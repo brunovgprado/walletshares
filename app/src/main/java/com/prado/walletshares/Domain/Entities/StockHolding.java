@@ -50,4 +50,8 @@ public class StockHolding {
     public void setPurchaseDate(Date purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
+
+    public double getAmountValue(){
+        return purchasePrice * numShares;
+    }
 }
