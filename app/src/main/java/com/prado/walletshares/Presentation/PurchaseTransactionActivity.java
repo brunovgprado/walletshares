@@ -3,7 +3,11 @@ package com.prado.walletshares.Presentation;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.orhanobut.hawk.Hawk;
+import com.prado.walletshares.Domain.Entities.StockHolding;
 import com.prado.walletshares.R;
+
+import java.util.List;
 
 public class PurchaseTransactionActivity extends AppCompatActivity {
 
@@ -11,5 +15,10 @@ public class PurchaseTransactionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase_transaction);
+
+    }
+
+    private void loadValuesFromFieldToObject(){
+
     }
 }
