@@ -5,8 +5,10 @@ import com.prado.walletshares.Domain.Interfaces.ICalculator;
 
 import java.util.List;
 
-public class CalculatesEquity implements ICalculator {
+public class CalculatesEquityService implements ICalculator {
     public double calculates(List<StockHolding> stockHoldingList){
-        return stockHoldingList.stream().mapToDouble(s -> s.getAmountValue()).sum();
+        if(stockHoldingList != null || stockHoldingList.size() == 0)
+            return stockHoldingList.stream().mapToDouble(s -> s.getAmountValue()).sum();
+        return 0.00;
     }
 }

@@ -26,14 +26,15 @@ public class StockHoldingRepository implements IStockHoldingRepository{
             stockHoldingList.add(stockHolding);
         }else{
             stockHoldingList = new ArrayList<StockHolding>();
+            stockHoldingList.add(stockHolding);
         }
         Hawk.put(KEY, stockHoldingList);
-    };
+    }
 
     public List<StockHolding> get(){
         ArrayList<StockHolding> stockHoldingList = Hawk.get(KEY);
         return stockHoldingList;
-    };
+    }
 
     public StockHolding getById(long id){
         StockHolding stockHolding;
@@ -61,5 +62,5 @@ public class StockHoldingRepository implements IStockHoldingRepository{
         }else{
             stockHolding = new StockHolding();
         }
-    };
+    }
 }

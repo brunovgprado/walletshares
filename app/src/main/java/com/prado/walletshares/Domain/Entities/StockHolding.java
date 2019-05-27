@@ -5,10 +5,10 @@ import java.util.Date;
 public class StockHolding {
     private long id;
     private String shareSymbol;
-    private Double purchasePrice;
-    private Double valueAtPurchase;
-    private int numShares;
+    private Double pricePerShare;
+    private int amountShares;
     private Date purchaseDate;
+    private Double OperationRate;
 
 
     public long getId() {
@@ -19,28 +19,28 @@ public class StockHolding {
         this.id = id;
     }
 
-    public Double getPurchasePrice() {
-        return purchasePrice;
+    public String getShareSymbol() {
+        return shareSymbol;
     }
 
-    public void setPurchasePrice(Double purchasePrice) {
-        this.purchasePrice = purchasePrice;
+    public void setShareSymbol(String shareSymbol) {
+        this.shareSymbol = shareSymbol;
     }
 
-    public Double getValueAtPurchase() {
-        return valueAtPurchase;
+    public Double getPricePerShare() {
+        return pricePerShare;
     }
 
-    public void setValueAtPurchase(Double valueAtPurchase) {
-        this.valueAtPurchase = valueAtPurchase;
+    public void setPricePerShare(Double pricePerShare) {
+        this.pricePerShare = pricePerShare;
     }
 
-    public int getNumShares() {
-        return numShares;
+    public int getAmountShares() {
+        return amountShares;
     }
 
-    public void setNumShares(int numShares) {
-        this.numShares = numShares;
+    public void setAmountShares(int amountShares) {
+        this.amountShares = amountShares;
     }
 
     public Date getPurchaseDate() {
@@ -52,6 +52,16 @@ public class StockHolding {
     }
 
     public double getAmountValue(){
-        return purchasePrice * numShares;
+        return pricePerShare * amountShares;
     }
+
+    public Double getOperationRate() {
+        return OperationRate;
+    }
+
+    public void setOperationRate(Double operationRate) {
+        OperationRate = operationRate;
+    }
+
+
 }

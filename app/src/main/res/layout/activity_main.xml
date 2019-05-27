@@ -7,12 +7,20 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/lbl_equity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <android.support.design.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_id"
+        android:text="Purchase"
+        android:onClick="startPurchaseActivity"/>
 
 </android.support.constraint.ConstraintLayout>

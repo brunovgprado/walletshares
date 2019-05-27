@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Wallet Shares</string>
+    <string name="field_symbol_description">Type the symbol in this field</string>
+    <string name="price_per_share">Price per share</string>
+    <string name="amount_of_shares">Amount of shares</string>
+    <string name="operation_rate">Operation rate</string>
+    <string name="lbl_symbol">Symbol</string>
+    <string name="lbl_btn_save">Save</string>
 </resources>
