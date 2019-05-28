@@ -70,6 +70,7 @@ public class PurchaseTransactionActivity extends AppCompatActivity {
             stock = new StockHolding();
             stock.setShareSymbol(symbol);
             stock.setPricePerShare(price);
+            stock.setAmountShares(amount);
             stock.setOperationRate(rate);
 
             return true;
