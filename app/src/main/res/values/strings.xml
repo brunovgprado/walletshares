@@ -6,4 +6,7 @@
     <string name="operation_rate">Operation rate</string>
     <string name="lbl_symbol">Symbol</string>
     <string name="lbl_btn_save">Save</string>
+    <string name="btn_purchase">Purchase</string>
+    <string name="share_item">Share item</string>
+    <string name="price_or_quotation">Price or quotation</string>
 </resources>

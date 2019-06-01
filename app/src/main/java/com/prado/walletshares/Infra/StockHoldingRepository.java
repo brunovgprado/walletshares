@@ -1,8 +1,6 @@
 package com.prado.walletshares.Infra;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.orhanobut.hawk.Hawk;
 import com.prado.walletshares.Domain.Entities.StockHolding;
@@ -23,6 +21,7 @@ public class StockHoldingRepository implements IStockHoldingRepository{
 
         if(Hawk.contains(KEY)){
             stockHoldingList = get();
+            stockHolding.setId(getNextId(stockHoldingList));
             stockHoldingList.add(stockHolding);
         }else{
             stockHoldingList = new ArrayList<StockHolding>();
@@ -62,5 +61,10 @@ public class StockHoldingRepository implements IStockHoldingRepository{
         }else{
             stockHolding = new StockHolding();
         }
+    }
+
+    private long getNextId(List<StockHolding> stockHoldings){
+        return SequenceGenerator.nextValue(stockHoldings.stream()
+                .mapToLong(StockHolding::getId).max().getAsLong());
     }
 }

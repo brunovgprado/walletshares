@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_id"
-        android:text="Purchase"
+        android:text="@string/btn_purchase"
         android:onClick="startPurchaseActivity"/>
 
 </android.support.constraint.ConstraintLayout>
