@@ -10,10 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StockHoldingRepository implements IStockHoldingRepository{
+    private static StockHoldingRepository stockHoldingRepositoryInstance;
     private static final String KEY = "StockHoldings";
 
-    public StockHoldingRepository(AppCompatActivity appCompatActivity){
+    private StockHoldingRepository(AppCompatActivity appCompatActivity){
         Hawk.init(appCompatActivity).build();
+    }
+
+    public static StockHoldingRepository getInstance(AppCompatActivity appCompatActivity){
+        if(stockHoldingRepositoryInstance == null){
+            return new StockHoldingRepository(appCompatActivity);
+        }
+        return stockHoldingRepositoryInstance;
     }
 
     public void save(StockHolding stockHolding){

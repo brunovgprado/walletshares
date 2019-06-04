@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.prado.walletshares.Presentation.PresentationModel.CardModel;
 import com.prado.walletshares.R;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.stockViewHolder>{
@@ -35,8 +37,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.stockViewHolder>{
 
     @Override
     public void onBindViewHolder(stockViewHolder stockViewHolder, final int i) {
-        stockViewHolder.txtTitulo.setText(cards.get(i).getTitle());
-        stockViewHolder.txtSubtitulo.setText(cards.get(i).getSubtitle());
+        stockViewHolder.txtTitle.setText(cards.get(i).getTitle());
+        stockViewHolder.txtSubtitle.setText(cards.get(i).getSubtitle());
+        stockViewHolder.txtValue.setText(String.valueOf(cards.get(i).getUnityValue()));
+        stockViewHolder.txtAmount.setText(String.valueOf(cards.get(i).getAmount()));
+        stockViewHolder.txtAmountValue.setText(String.valueOf(cards.get(i).getAmountValue()));
 
         stockViewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,16 +53,20 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.stockViewHolder>{
 
     public static class stockViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
-        TextView txtTitulo;
-        TextView txtSubtitulo;
+        TextView txtTitle;
+        TextView txtSubtitle;
         TextView txtValue;
+        TextView txtAmountValue;
+        TextView txtAmount;
 
         stockViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
-            txtTitulo = (TextView)itemView.findViewById(R.id.text_title);
-            txtSubtitulo = (TextView)itemView.findViewById(R.id.text_subtitle);
+            txtTitle = (TextView)itemView.findViewById(R.id.text_title);
+            txtSubtitle = (TextView)itemView.findViewById(R.id.text_subtitle);
             txtValue = (TextView)itemView.findViewById(R.id.text_value);
+            txtAmount = (TextView)itemView.findViewById(R.id.text_amonut);
+            txtAmountValue = (TextView)itemView.findViewById(R.id.text_amount_value);
         }
     }
 }

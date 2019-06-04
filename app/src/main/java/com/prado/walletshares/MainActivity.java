@@ -1,6 +1,7 @@
 package com.prado.walletshares;
 
 import android.content.Intent;
+import android.support.design.button.MaterialButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import com.prado.walletshares.Application.PurchaseTransactionAppService;
 import com.prado.walletshares.Infra.StockHoldingRepository;
 import com.prado.walletshares.Presentation.PurchaseTransactionActivity;
 import com.prado.walletshares.Presentation.SaleTransactionActivity;
+import com.prado.walletshares.Presentation.StocksListActivity;
 
 public class MainActivity extends AppCompatActivity {
     IPurchaseTransactionAppService service;
@@ -22,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        service = new PurchaseTransactionAppService(new StockHoldingRepository(this));
-
+        service = new PurchaseTransactionAppService(StockHoldingRepository.getInstance(this));
         this.setupDashBoard(service);
     }
 
@@ -41,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
     public void startSaleActivity(View view){
         Intent saleActivity = new Intent(this, SaleTransactionActivity.class);
         startActivity(saleActivity);
+    }
+
+    public void startStocListActivity(View view){
+        Intent stockListActivity = new Intent(this,StocksListActivity.class);
+        startActivity(stockListActivity);
     }
 
 }

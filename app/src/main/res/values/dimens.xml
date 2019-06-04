@@ -3,7 +3,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="textView_vertical_margin">8dp</dimen>
     <dimen name="activity_horizontal_margin">10dp</dimen>
-    <dimen name="padding_botoes_principal">7dp</dimen>
+    <dimen name="padding_principal_buttons">7dp</dimen>
     <dimen name="txt_btn_principal">24sp</dimen>
     <dimen name="text_size_btn_pricipal">19sp</dimen>
 </resources>
