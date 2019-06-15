@@ -31,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
     private void setupDashBoard(IPurchaseTransactionAppService service) {
         Double equityValue = new CalculatesEquityService().calculates(service.getTransactions());
         equity = (TextView)findViewById(R.id.lbl_equity);
-        equity.setText(equityValue.toString());
+
+        StringBuilder txtLblEquity = new StringBuilder();
+        txtLblEquity.append("$ ").append(equityValue.toString());
+
+        equity.setText(txtLblEquity);
     }
 
     public void startPurchaseActivity(View view){

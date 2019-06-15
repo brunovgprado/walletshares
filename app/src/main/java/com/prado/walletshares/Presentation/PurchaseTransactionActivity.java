@@ -26,7 +26,7 @@ public class PurchaseTransactionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase_transaction);
-        service = new PurchaseTransactionAppService(new StockHoldingRepository(this));
+        service = new PurchaseTransactionAppService(StockHoldingRepository.getInstance(this));
     }
 
     public void savePurchaseOperation(View view){
