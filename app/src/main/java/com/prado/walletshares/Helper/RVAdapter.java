@@ -45,9 +45,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.stockViewHolder>{
 
         stockViewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                getCard.get(cards.get(i));
-            }
+            public void onClick(View v) { getCard.get(cards.get(i)); }
         });
     }
 
