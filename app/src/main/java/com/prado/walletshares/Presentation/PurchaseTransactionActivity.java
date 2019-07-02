@@ -1,5 +1,6 @@
 package com.prado.walletshares.Presentation;
 
+import android.support.design.button.MaterialButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class PurchaseTransactionActivity extends AppCompatActivity {
     TextInputEditText pricePerShare;
     TextInputEditText amountShares;
     TextInputEditText operationRate;
+    MaterialButton btnPurchase;
     StockHolding stock;
     IPurchaseTransactionAppService service;
 
@@ -27,6 +29,12 @@ public class PurchaseTransactionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase_transaction);
         service = new PurchaseTransactionAppService(StockHoldingRepository.getInstance(this));
+
+        this.SetupComponents();
+    }
+
+    private void SetupComponents() {
+        btnPurchase = (MaterialButton)findViewById(R.id.btn_save_purchase);
     }
 
     public void savePurchaseOperation(View view){
